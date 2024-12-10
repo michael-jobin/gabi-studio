@@ -1,0 +1,37 @@
+import { defineField, defineType } from 'sanity'
+
+export default defineType({
+ name: 'about',
+ title: 'About Page',
+ type: 'document',
+ fields: [
+  defineField({
+   name: 'title',
+   title: 'Title SEO',
+   type: 'string',
+   validation: (rule) => rule.required(),
+  }),
+  defineField({
+   name: 'description',
+   title: 'Description SEO',
+   type: 'string',
+   validation: (rule) => rule.required(),
+  }),
+  defineField({
+   name: 'introduction',
+   title: 'Introduction in English',
+   type: 'array',
+   of: [{ type: 'block' }]
+  }),
+  defineField({
+   name: 'introductionJp',
+   title: 'Introduction in Japanese',
+   type: 'array',
+   of: [{ type: 'block' }]
+  }),
+  defineField({
+   name: 'hobbies',
+   type: 'string',
+  }),
+ ]
+})
