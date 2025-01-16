@@ -33,5 +33,41 @@ export default defineType({
    name: 'hobbies',
    type: 'string',
   }),
+  defineField({
+   name: 'career',
+   title: 'Career',
+   type: 'array',
+   of: [
+    {
+     type: 'object',
+     fields: [
+      defineField({
+       name: 'year',
+       title: 'Year',
+       type: 'string',
+      }),
+      defineField({
+       name: 'position',
+       title: 'Position',
+       type: 'string',
+      }),
+      defineField({
+       name: 'place',
+       title: 'School, Company Name',
+       type: 'string',
+      }),
+      defineField({
+       name: 'flag',
+       title: 'Flag',
+       type: 'string',
+       options: {
+        list: ['Japan', 'Argentina'],
+        layout: 'radio',
+       },
+      }),
+     ],
+    }
+   ]
+  }),
  ]
 })
