@@ -69,5 +69,32 @@ export default defineType({
     }
    ]
   }),
+  defineField({
+   name: 'exhibitions',
+   title: 'Exhibitions / Events',
+   type: 'array',
+   of: [
+    {
+     type: 'object',
+     fields: [
+      defineField({
+       name: 'year',
+       title: 'Year',
+       type: 'string',
+      }),
+      defineField({
+       name: 'title',
+       title: 'Title',
+       type: 'string',
+      }),
+      defineField({
+       name: 'city',
+       title: 'City',
+       type: 'string',
+      }),
+     ],
+    }
+   ]
+  }),
  ]
 })

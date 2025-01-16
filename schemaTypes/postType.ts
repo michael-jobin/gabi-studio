@@ -207,10 +207,12 @@ export const postType = defineType({
          type: 'array',
          of: [
           {
+           name: 'slideImage',
+           title: 'Image (1516 × 1284)',
            type: 'image',
-           options: {
-            hotspot: true,
-           },
+           // options: {
+           //  hotspot: true,
+           // },
           },
          ],
         }),
