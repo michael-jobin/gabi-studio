@@ -1,14 +1,16 @@
 // ./structure/index.ts
 
 import type { StructureResolver } from 'sanity/structure'
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = (S, context) =>
   S.list()
     .title('Website Content')
     .items([
-      ...S.documentTypeListItems().filter(
-        (listItem: any) => !['home', 'about'].includes(listItem.getId()),
-      ),
+      orderableDocumentListDeskItem({ type: 'works', S, context }),
+      // ...S.documentTypeListItems().filter(
+      //   (listItem: any) => !['home', 'about'].includes(listItem.getId()),
+      // ),
       S.divider(),
       S.listItem()
         .title('Home Page')

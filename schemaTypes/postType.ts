@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 import { SparklesIcon } from '@sanity/icons'
-
+import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
 // info column field
 const columnFieldGroup = (prefix: string) => [
  defineField({
@@ -38,8 +38,10 @@ export const postType = defineType({
  name: 'works',
  title: 'Works',
  type: 'document',
+ orderings: [orderRankOrdering],
  icon: SparklesIcon,
  fields: [
+  orderRankField({ type: "works" }),
   defineField({
    name: 'title',
    type: 'string',
@@ -71,8 +73,14 @@ export const postType = defineType({
   }),
   defineField({
    name: 'backgroundColor',
-   title: 'Background Color',
+   title: 'Background Color (white by default) (if you set a background image, no need for a color)',
    type: 'color',
+  }),
+  defineField({
+   name: 'darkBackground',
+   title: 'click if the background is dark and you want white text',
+   type: 'boolean',
+   initialValue: false
   }),
   defineField({
    name: 'backgroundImage',
