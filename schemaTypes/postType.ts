@@ -186,6 +186,12 @@ export const postType = defineType({
        hidden: ({ parent }) => parent?.galleryType !== 'image',
       }),
       defineField({
+       name: 'galleryWidth',
+       title: 'Optional width (ex: 50rem)',
+       type: 'string',
+       hidden: ({ parent }) => parent?.galleryType !== 'image',
+      }),
+      defineField({
        name: 'galleryId',
        title: 'YouTube Video ID',
        type: 'string',
