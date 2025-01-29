@@ -1,5 +1,5 @@
 // ./structure/index.ts
-
+import { SparklesIcon } from '@sanity/icons'
 import type { StructureResolver } from 'sanity/structure'
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 
@@ -7,7 +7,7 @@ export const structure: StructureResolver = (S, context) =>
   S.list()
     .title('Website Content')
     .items([
-      orderableDocumentListDeskItem({ type: 'works', S, context }),
+      orderableDocumentListDeskItem({ type: 'works',title: 'Works',icon: SparklesIcon, S, context }),
       // ...S.documentTypeListItems().filter(
       //   (listItem: any) => !['home', 'about'].includes(listItem.getId()),
       // ),

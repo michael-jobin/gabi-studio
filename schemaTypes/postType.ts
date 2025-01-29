@@ -1,5 +1,4 @@
 import { defineField, defineType } from 'sanity'
-import { SparklesIcon } from '@sanity/icons'
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
 // info column field
 const columnFieldGroup = (prefix: string) => [
@@ -39,7 +38,7 @@ export const postType = defineType({
  title: 'Works',
  type: 'document',
  orderings: [orderRankOrdering],
- icon: SparklesIcon,
+ // icon: SparklesIcon,
  fields: [
   orderRankField({ type: "works" }),
   defineField({
@@ -56,7 +55,7 @@ export const postType = defineType({
   defineField({
    name: 'date',
    title: 'Date on the thumbnail',
-   type: 'number',
+   type: 'string',
   }),
   defineField({
    name: 'thumbnail',
