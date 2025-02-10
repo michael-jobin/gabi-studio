@@ -76,10 +76,17 @@ export const postType = defineType({
    type: 'color',
   }),
   defineField({
+   name: 'backgroundColor2',
+   title: 'If you already choose a background color, you can choose another one here to create a gradient',
+   type: 'color',
+   hidden: ({ parent }) => parent?.backgroundColor === undefined,
+  }),
+  defineField({
    name: 'darkBackground',
    title: 'click if the background is dark and you want white text',
    type: 'boolean',
-   initialValue: false
+   initialValue: false,
+   hidden: ({ parent }) => parent?.backgroundColor === undefined,
   }),
   defineField({
    name: 'backgroundImage',
@@ -102,6 +109,7 @@ export const postType = defineType({
      'indesign',
      'aftereffect',
      'audition',
+     'brush',
     ],
    },
   }),

@@ -30,6 +30,11 @@ export default defineType({
    of: [{ type: 'block' }]
   }),
   defineField({
+   name: 'profilePic',
+   title: 'Profile Picture (546 x 848)',
+   type: 'image',
+  }),
+  defineField({
    name: 'hobbies',
    type: 'string',
   }),
