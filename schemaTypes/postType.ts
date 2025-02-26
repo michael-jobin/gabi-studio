@@ -211,6 +211,19 @@ export const postType = defineType({
        hidden: ({ parent }) => parent?.galleryType !== 'video',
       }),
       defineField({
+       name: 'galleryVideoTitle',
+       title: 'Video Title (orange)',
+       type: 'string',
+       hidden: ({ parent }) => parent?.galleryType !== 'video',
+      }),
+      defineField({
+       name: 'galleryVideoSubtitle',
+       title: 'Video Subtitle',
+       type: 'string',
+       hidden: ({ parent }) =>
+        parent?.galleryType !== 'video' || !parent?.galleryVideoTitle,
+      }),
+      defineField({
        name: 'galleryCaption',
        title: 'Video Caption',
        type: 'text',
